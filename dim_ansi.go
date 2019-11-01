@@ -57,8 +57,8 @@ func copyStream(dest io.Writer, source io.Reader) {
 
 		if n > 0 {
 			bufslice := buf[0:n]
-			bufslice = removeSeq("\033[1;", bufslice)
-			bufslice = removeSeq("\033[01;", bufslice)
+			bufslice = removeSeq("\033[1", bufslice)
+			bufslice = removeSeq("\033[01", bufslice)
 			bufslice = removeSeq("\033[37", bufslice)
 
 			w, err := dest.Write(bufslice)
